@@ -1,0 +1,282 @@
+/* ==========================================================================
+// @section     One Page
+// @description Gestion du gabarit pour un template one page
+// =========================================================================*/
+
+/* inicia la seccion onepage donde se encuentras las secciones educacion, conocimiento y perfil */
+
+.onepage .educacion, .onepage .conocimiento, .educacion .perfil {
+	box-sizing: border-box;
+	min-height: 100vh;
+	margin: 0;
+	padding: 1rem 2rem;
+}
+
+.onepage .educacion:nth-child(3n+1) {
+	color:  #262626;
+	background-color: #FD7923;
+}
+
+.onepage .educacion:nth-child(3n+1) * {
+	color:  #262626;
+	fill: #FD7923;
+}
+
+.onepage .conocimiento:nth-child(3n+2) {
+	color:  #F4F4F4;
+	background-color: #B94E8A;
+}
+
+.onepage .conocimiento:nth-child(3n+2) * {
+	color:  #F4F4F4;
+	fill: #B94E8A;
+}
+
+.onepage .perfil:nth-child(3n+3) {
+	color: #F4F4F4;
+	background-color: #587AA5;
+}
+
+.onepage .perfil:nth-child(3n+3) * {
+	color: #F4F4F4;
+	fill: #587AA5;
+}
+/* termina la seccion onepage donde se encuentras las secciones educacion, conocimiento y perfil */
+
+/* inicia la seccion de navegacion como el menu donde se muestran las secciones enlazadas (el nav se usa para enlazar los conjuntos de navegacion) */
+
+.onepage .main-nav {
+	position: fixed;
+  z-index: 4000;
+	display: table;
+	table-layout: fixed;
+	bottom: 0;
+	text-align: center;
+	background: rgba(0, 0, 0, .2);
+}
+.main-content{
+  text-align:center;
+  margin-bottom:0px;
+}
+
+@media (max-width: 40em) {
+	.onepage .main-nav {
+		width: 100%;
+	}
+} /* END @media */
+
+@media (min-width: 40em) {
+	.onepage .main-nav {
+		top: 0;
+		right: 0;
+	}
+} /* END @media */
+
+.onepage .main-nav a {
+  display: table-cell;
+  padding: 1rem;
+  color: #fefefe;
+  text-decoration: none;
+}
+.onepage .main-nav a.active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* termina las partes de la navegacion */
+
+/* inicia todo el diseño de letras o cosas extras que se usan en la pagina principal (index.html) */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html,
+body { 
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #fefefe;
+  font-family: 'Open Sans', Arial;
+}
+
+.vertical {
+	display: block;
+	width: 100%;
+/*	height: 100%; /* @bugfix @affected Firefox */
+}
+
+.vertical > * {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+h1, .h1 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+  font-size: 3.2rem;
+}
+
+h2, .h2 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.7rem;
+  font-size: 2.8rem;
+}
+
+@media (max-width: 40em) {
+	
+	
+  p {
+		font-size: 6vmin;
+  }
+  
+	h1, .h1 {
+		font-size: 9.6vmin;
+	}
+
+	h2, .h2 {
+		font-size: 7.6vmin;
+	}
+
+} /* termina el dieño de las letras */
+
+/* inicia timeline */
+.timeline{
+  color:black;
+  overflow:hidden;
+}
+.timeline ul {
+  background: inherit;
+  padding: 50px 0;
+}
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: rgba(1,1,1,0.4);
+}
+
+.timeline ul li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.timeline ul li div {
+  font-family: sans-serif;
+  position: relative;
+  bottom: 0;
+  width: 300px;
+  padding: 15px;
+  background: white; 
+}
+
+.timeline ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+  left: -19px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent rgba(1,1,1,0.4) transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+  left: -250px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+  right: -19px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent rgba(1,1,1,0.4);
+}
+
+time {
+  font-family: 'Bungee Inline', cursive;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color:black;
+}
+.edu-desc{
+  background:white;
+}
+
+.timeline ul li::after {
+  transition: background .5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+  background: rgba(1,1,1,0.4); 
+}
+
+.timeline ul li:nth-child(odd) div {
+  transform: translate3d(90px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 200px;
+  }
+  .timeline ul li:nth-child(even) div {
+    left: -239px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline ul li div {
+    width: calc(80vw - 101px);
+  }
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+  .timeline ul li:nth-child(even) div:before {
+    left: -19px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent rgba(1,1,1,0.4) transparent transparent;
+  }
+}
+/*termina timeline*/
+
+/* se agrega el diseño de las lineas que quiebran las secciones (su diseño)*/
+.svg {
+  display: block;
+  margin: 5vh auto 0;
+  width: 100%;
+  height: 100%;
+  max-width: 30wh;
+  max-height: 30vh;
+}
+  /* espero haber podido comentar lo que era necesario */
